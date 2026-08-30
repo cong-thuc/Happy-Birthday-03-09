@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+
+<head>
+	<!-- Redirect khi không có id. Hỗ trợ: ?id=xxx, ?xxx, hoặc path /xxx (không có dấu ?) -->
+	<script>
+		// Removed redirect logic for standalone mode
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<title>Birthday Gift Pro ❤️</title>
+	<link rel="icon" href="logo_ready.webp" type="image/webp">
+	<link rel="apple-touch-icon" href="logo_ready.webp">
+	<meta name="description"
+		content="Có người đã gửi cho bạn một món quà Sinh nhật đặc biệt. Chạm để mở và khám phá...">
+	<meta name="robots" content="noindex, nofollow">
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Birthday Gift Pro❤️">
+	<meta property="og:description"
+		content="Có người đã gửi cho bạn một món quà sinh nhật đặc biệt. Chạm để mở và khám phá...">
+	<meta property="og:image" content="./logo_ready.webp">
+	<meta property="og:locale" content="vi_VN">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Birthday Gift Pro❤️">
+	<meta name="twitter:description"
+		content="Có người đã gửi cho bạn một món quà sinh nhật đặc biệt. Chạm để mở và khám phá...">
+	<meta name="twitter:image" content="./logo_ready.webp">
+	<link rel="preconnect" href="https://giftorybee.onrender.com" crossorigin>
+	<link rel="dns-prefetch" href="https://giftorybee.onrender.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- Preload ảnh quan trọng xuất hiện ngay khi vào trang -->
+	<link rel="preload" href="./background.webp" as="image">
+	<link rel="preload" href="./birthday.webp" as="image">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Satisfy&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./gift-box.css">
+	<link rel="stylesheet" href="./cake.css">
+	<link rel="stylesheet" href="./letter-modal.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+		@font-face {
+			font-family: "Pacifico";
+			src: local('Pacifico');
+		}
+	</style>
+	<!-- Removed devtools blocker -->
+</head>
+
+<body>
+	<!-- Banner preview: chỉ hiện khi ?preview=1 -->
+	<div id="previewModeBanner" style="
+		display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999;
+		background:rgba(30,30,40,0.88); backdrop-filter:blur(6px);
+		color:#fff; text-align:center; padding:10px 16px;
+		font-size:14px; font-family:sans-serif; letter-spacing:.3px;
+		border-top:2px solid rgba(255,255,255,.15);">
+		👁️ <strong>Đang xem trước</strong>
+		<a id="previewBackToCreate" href="./create.html" style="
+			margin-left:10px; color:#a8f0c6; font-weight:600;
+			text-decoration:none; border-bottom:1px solid rgba(168,240,198,.5);">← Quay lại chỉnh sửa</a>
+	</div>
+	<div id="previewWatermark" style="
+		display:none; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%) rotate(-24deg);
+		z-index:9000; pointer-events:none; user-select:none; white-space:nowrap;
+		font-size:clamp(56px, 11vw, 160px); font-weight:900; letter-spacing:.12em;
+		color:rgba(236,236,236,0.26); text-transform:uppercase; font-family:'Pacifico', cursive;
+		text-shadow:0 3px 16px rgba(0,0,0,.18), 0 0 1px rgba(255,255,255,.45);">
+		Xem demo
+	</div>
+	<script>
+		if (location.search.indexOf('preview=1') !== -1 || location.search.indexOf('preview=true') !== -1) {
+			document.getElementById('previewModeBanner').style.display = 'block';
+			document.getElementById('previewWatermark').style.display = 'block';
+		}
+	</script>
+
+	<div class="page-top-banner" aria-hidden="true">
+		<img class="page-top-banner__left" src="./left_banner.webp" alt="" decoding="async" />
+		<img class="page-top-banner__right" src="./left_banner.webp" alt="" decoding="async" />
+	</div>
+	<div class="page-top-purl" aria-hidden="true">
+		<img class="page-top-purl__left" src="./left_purl.webp" alt="" decoding="async" />
+		<img class="page-top-purl__right" src="./left_purl.webp" alt="" decoding="async" />
+	</div>
+	<div class="page-birthday-heading" role="img" aria-label="Happy Birthday!">
+		<div class="page-birthday-heading__board">
+			<!-- arc = translateY offset: 0 = đỉnh vòm, số âm lớn = thấp hơn, tạo parabol úp ngược -->
+			<div class="page-birthday-heading__row">
+				<span class="page-birthday-heading__letter" data-ch="H" style="--r:-9deg; --arc:0px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">H</span></span>
+				<span class="page-birthday-heading__letter" data-ch="a" style="--r:6deg;  --arc:-9px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">a</span></span>
+				<span class="page-birthday-heading__letter" data-ch="p" style="--r:-5deg; --arc:-15px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">p</span></span>
+				<span class="page-birthday-heading__letter" data-ch="p" style="--r:7deg;  --arc:-9px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">p</span></span>
+				<span class="page-birthday-heading__letter" data-ch="y" style="--r:-8deg; --arc:0px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">y</span></span>
+			</div>
+			<div class="page-birthday-heading__row">
+				<span class="page-birthday-heading__letter" data-ch="B" style="--r:-7deg; --arc:0px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">B</span></span>
+				<span class="page-birthday-heading__letter" data-ch="i" style="--r:8deg;  --arc:-7px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">i</span></span>
+				<span class="page-birthday-heading__letter" data-ch="r" style="--r:-4deg; --arc:-12px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">r</span></span>
+				<span class="page-birthday-heading__letter" data-ch="t" style="--r:5deg;  --arc:-16px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">t</span></span>
+				<span class="page-birthday-heading__letter" data-ch="h" style="--r:-5deg; --arc:-17px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">h</span></span>
+				<span class="page-birthday-heading__letter" data-ch="d" style="--r:4deg;  --arc:-16px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">d</span></span>
+				<span class="page-birthday-heading__letter" data-ch="a" style="--r:-6deg; --arc:-12px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">a</span></span>
+				<span class="page-birthday-heading__letter" data-ch="y" style="--r:7deg;  --arc:-7px;"><span
+						class="page-birthday-heading__glyph" aria-hidden="true">y</span></span>
+				<span class="page-birthday-heading__letter page-birthday-heading__letter--bang" data-ch="!"
+					style="--r:11deg; --arc:0px;"><span class="page-birthday-heading__glyph"
+						aria-hidden="true">!</span></span>
+			</div>
+		</div>
+	</div>
+	<div class="title">
+	</div>
+	<audio autoplay="autopaly" loop="loop" id="audios" preload="auto">
+		<source src="http://music.163.com/song/media/outer/url?id=1428948873.mp3" />
+	</audio>
+	<div class="cube-view" id="cube-view">
+		<div class="cube" id="gift-cube" role="button" tabindex="0"
+			aria-label="Nhấn để mở hộp (không đóng lại bằng nhấn). Xoay góc nhìn bằng cách kéo vùng nền quanh hộp">
+			<!--  cùng một texture -->
+			<div class="outer-cube">
+				<div class="outer-top">
+					<img src="./birthday.webp" alt="" />
+				</div>
+				<div class="outer-bottom">
+					<img src="./birthday.webp" alt="" />
+				</div>
+				<div class="outer-front">
+					<img src="./birthday.webp" alt="" />
+				</div>
+				<div class="outer-back">
+					<img src="./birthday.webp" alt="" />
+				</div>
+				<div class="outer-left">
+					<img src="./birthday.webp" alt="" />
+				</div>
+				<div class="outer-right">
+					<img src="./birthday.webp" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fireworks-layer" id="fireworks-layer" aria-hidden="true"></div>
+	<div class="balloon-layer" id="balloon-layer" aria-hidden="true"></div>
+	<div class="photo-wall" id="photo-wall" aria-hidden="true"></div>
+	<div id="letter-modal" class="letter-modal-overlay" aria-hidden="true">
+		<svg class="svg-filters" aria-hidden="true" focusable="false">
+			<defs>
+				<filter id="loveLetterWavyBorder" x="-15%" y="-15%" width="130%" height="130%">
+					<feTurbulence type="turbulence" baseFrequency="0.014 0.007" numOctaves="2" seed="5"
+						result="noise" />
+					<feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R"
+						yChannelSelector="G" />
+				</filter>
+			</defs>
+		</svg>
+		<div class="envlope-wrapper">
+			<div id="envelope" class="close">
+				<div class="wax-seal"></div>
+				<span class="envelope-center-heart" aria-hidden="true"></span>
+				<div class="front flap"></div>
+				<div class="front pocket"></div>
+				<div class="letter-slot">
+					<div class="letter" id="loveLetter">
+						<div class="letter-corner corner-tl"></div>
+						<div class="letter-corner corner-br"></div>
+						<div class="message">
+							<div class="letter-inner">
+								<button type="button" class="letter-btn-close" id="letterBtnClose"
+									aria-label="Đóng thư">&times;</button>
+								<h2 class="letter-title" id="letterTitle"></h2>
+								<div class="letter-body" id="letterBody"></div>
+								<button type="button" class="letter-btn-continue" id="letterBtnContinue" disabled
+									aria-hidden="true">Tiếp tục</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hearts">
+					<div class="heart a1"></div>
+					<div class="heart a2"></div>
+					<div class="heart a3"></div>
+				</div>
+				<div class="sparkles">
+					<div class="sparkle s1"></div>
+					<div class="sparkle s2"></div>
+					<div class="sparkle s3"></div>
+				</div>
+			</div>
+		</div>
+		<audio id="letterSound" preload="metadata">
+			
+		</audio>
+	</div>
+	<div id="memory-zone" class="memory-zone" aria-hidden="true">
+		<div id="memory-cake-stage" class="memory-cake-stage" aria-hidden="true"></div>
+		<div id="memory-blow-slot" class="memory-blow-slot">
+			<button id="memory-blow-candle-btn" class="memory-blow-candle-btn" type="button">🔥 Thổi nến</button>
+			<p id="memory-cake-cut-reminder" class="memory-cake-cut-reminder" hidden>Vuốt <strong>xuyên qua
+					bánh</strong> để cắt bánh — cắt đủ<strong> 3 nhát</strong></p>
+		</div>
+	</div>
+	<div class="page-float-bubble" aria-hidden="true">
+		<img src="./ballon.webp" alt="" decoding="async" />
+	</div>
+	<!-- Mây tách lớp z-index thấp — không cùng 210 với thỏ (tránh đè phong bì z-200) -->
+	<div class="page-cloud-decor-sky" aria-hidden="true">
+		<img class="page-cloud-decor__cloud" src="./cloud_decor.webp" alt="" decoding="async" />
+	</div>
+	<div class="page-cloud-decor" aria-hidden="true">
+		<img class="page-cloud-decor__rabbit page-cloud-decor__rabbit--left" src="./left_rabbit.webp"
+			alt="" decoding="async" />
+		<img class="page-cloud-decor__rabbit page-cloud-decor__rabbit--right" src="./left_rabbit.webp"
+			alt="" decoding="async" />
+	</div>
+	<!-- Preview mode: load IndexedDB helper + boot TRƯỚC mọi script khác -->
+	<script src="./previewDB.js"></script>
+	<script src="./preview-boot.js"></script>
+	<!-- Birthday mode: fetch bản ghi theo ?id= rồi gán vào __PREVIEW_DATA__ -->
+	<script src="./birthday-boot.js"></script>
+
+	<!--
+	  Three.js: dùng ES module (không còn cảnh báo deprecated build/three.min.js).
+	  Gán vào window.THREE — cake.js vẫn dùng window.THREE như cũ.
+	-->
+	<script type="module">
+		import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+		window.THREE = THREE;
+	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+	<script src="./cake.js" defer></script>
+	<script src="./letter-index.js" defer></script>
+	<script src="./gift-box.js" defer></script>
+
+	<!-- Áp dụng nhạc: set vào #letterSound để phát khi mở hộp quà -->
+	<script>
+		(function () {
+			if (!window.__PREVIEW_READY__) return;
+			window.__PREVIEW_READY__.then(function (pd) {
+				if (!pd) return;
+				var src = '';
+				if (pd.musicType === 'Custom' && pd.customMusicUrl) {
+					src = pd.customMusicUrl;
+				} else if (pd.musicType === 'Sample' && pd.musicPath) {
+					src = pd.musicPath;
+				}
+				if (!src) return;
+				/* Ghi đè #letterSound — gift-box.js sẽ play nó khi hộp được mở */
+				var letterSound = document.getElementById('letterSound');
+				if (letterSound) {
+					letterSound.innerHTML = '<source src="' + src + '">';
+					letterSound.load();
+				}
+			});
+		})();
+	</script>
+</body>
+
+</html>
+
