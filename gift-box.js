@@ -16,7 +16,11 @@
 				'./image/hinh6.jpg',
 				'./image/hinh7.jpg',
 				'./image/hinh8.jpg',
-				'./image/hinh9.jpg'
+				'./image/hinh9.jpg',
+				'./image/hinh10.jpg',
+				'./image/hinh11.jpg',
+				'./image/hinh12.jpg',
+				'./image/hinh13.jpg'
 			];
 			/* Helper: láº¥y danh sÃ¡ch áº£nh (Æ°u tiÃªn preview náº¿u cÃ³) */
 			function getPhotoSources() {

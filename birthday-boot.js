@@ -41,7 +41,11 @@
         './image/hinh8.jpg',
         './image/hinh3.jpg',
         './image/hinh4.jpg',
-        './image/hinh2.jpg'
+        './image/hinh2.jpg',
+        './image/hinh10.jpg',
+        './image/hinh11.jpg',
+        './image/hinh12.jpg',
+        './image/hinh13.jpg'
       ],
       isSavePermanent: true,
       finalGift: true

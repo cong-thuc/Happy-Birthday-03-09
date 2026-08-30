@@ -9,6 +9,10 @@ let MEMORY_IMAGE_SRCS = [
   "./image/hinh7.jpg",
   "./image/hinh8.jpg",
   "./image/hinh9.jpg",
+  "./image/hinh10.jpg",
+  "./image/hinh11.jpg",
+  "./image/hinh12.jpg",
+  "./image/hinh13.jpg",
 ];
 
 /**
